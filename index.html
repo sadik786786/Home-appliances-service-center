@@ -34,7 +34,7 @@
             scroll-behavior: smooth;
         }
         body {
-            font-family:'Inter', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
@@ -57,15 +57,18 @@
             padding: 0 24px;
         }
 
-        /* ===== CONTACT BAR (Top Bar) — Enhanced ===== */
+        /* ===== CONTACT BAR — PC & Mobile (always single-line, just smaller on mobile) ===== */
         .contact-bar {
             background: linear-gradient(135deg, var(--true-blue) 0%, var(--true-blue-dark) 100%);
             color: #fff;
-            padding: 12px 0;
+            padding: 10px 0;
             font-size: 0.92rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
         }
         .contact-bar::before {
             content: '';
@@ -81,22 +84,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 12px 24px;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
         .contact-left {
             display: flex;
             align-items: center;
             gap: 24px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            flex-shrink: 1;
+            min-width: 0;
         }
         .contact-right {
             display: flex;
             align-items: center;
             gap: 16px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            flex-shrink: 0;
         }
         .contact-item {
             display: flex;
@@ -105,6 +112,8 @@
             color: rgba(255, 255, 255, 0.92);
             font-weight: 500;
             transition: color 0.3s;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         .contact-item:hover {
             color: #fff;
@@ -146,6 +155,7 @@
             backdrop-filter: blur(4px);
             transition: background 0.3s, transform 0.3s;
             cursor: default;
+            flex-shrink: 0;
         }
         .contact-badge:hover {
             background: rgba(255, 255, 255, 0.22);
@@ -172,6 +182,8 @@
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            flex-shrink: 0;
+            border-radius: 4px;
         }
         .contact-cta:hover {
             background: var(--true-blue-light);
@@ -182,66 +194,174 @@
             font-size: 0.8rem;
         }
 
+        /* ---- Tablet (max-width: 768px) - everything stays, just smaller ---- */
         @media (max-width: 768px) {
             .contact-bar {
-                padding: 10px 0;
-                font-size: 0.8rem;
-            }
-            .contact-bar-content {
-                justify-content: center;
-                gap: 10px 18px;
-            }
-            .contact-left {
-                justify-content: center;
-                gap: 14px;
-            }
-            .contact-right {
-                justify-content: center;
-                gap: 12px;
-            }
-            .contact-item .icon-wrap {
-                width: 26px;
-                height: 26px;
+                padding: 6px 0;
                 font-size: 0.7rem;
+                min-height: 36px;
             }
-            .contact-badge {
-                padding: 4px 14px 4px 10px;
-                font-size: 0.75rem;
-            }
-            .contact-cta {
-                padding: 6px 16px;
-                font-size: 0.75rem;
-            }
-        }
-        @media (max-width: 480px) {
             .contact-bar-content {
-                flex-direction: column;
-                gap: 6px;
+                gap: 6px 12px;
+                justify-content: space-between;
             }
             .contact-left {
                 gap: 10px;
-                justify-content: center;
             }
             .contact-right {
                 gap: 8px;
-                justify-content: center;
             }
             .contact-item {
                 font-size: 0.7rem;
                 gap: 6px;
             }
             .contact-item .icon-wrap {
-                width: 22px;
-                height: 22px;
+                width: 24px;
+                height: 24px;
                 font-size: 0.6rem;
+            }
+            .contact-item a {
+                font-size: 0.7rem;
             }
             .contact-badge {
                 font-size: 0.65rem;
-                padding: 3px 10px;
+                padding: 4px 12px 4px 10px;
+                gap: 4px;
+            }
+            .contact-badge i {
+                font-size: 0.7rem;
             }
             .contact-cta {
+                padding: 5px 14px;
+                font-size: 0.7rem;
+                gap: 5px;
+                border-radius: 4px;
+            }
+            .contact-cta i {
                 font-size: 0.65rem;
-                padding: 4px 12px;
+            }
+            /* Keep email visible — just smaller */
+            .contact-item-email {
+                display: flex !important;
+            }
+        }
+
+        /* ---- Small Phone (max-width: 480px) - even smaller, but all in one line ---- */
+        @media (max-width: 480px) {
+            .contact-bar {
+                padding: 4px 0;
+                font-size: 0.58rem;
+                min-height: 30px;
+            }
+            .contact-bar-content {
+                gap: 4px 8px;
+                justify-content: space-between;
+            }
+            .contact-left {
+                gap: 6px;
+            }
+            .contact-right {
+                gap: 5px;
+            }
+            .contact-item {
+                font-size: 0.58rem;
+                gap: 4px;
+            }
+            .contact-item .icon-wrap {
+                width: 18px;
+                height: 18px;
+                font-size: 0.5rem;
+            }
+            .contact-item a {
+                font-size: 0.58rem;
+            }
+            /* Phone number slightly bolder and a bit larger for prominence */
+            .contact-item a[href^="tel:"] {
+                font-size: 0.65rem;
+                font-weight: 700;
+            }
+            .contact-badge {
+                font-size: 0.5rem;
+                padding: 2px 8px 2px 6px;
+                gap: 3px;
+                border-radius: 12px;
+            }
+            .contact-badge i {
+                font-size: 0.55rem;
+            }
+            .contact-badge .highlight {
+                font-size: 0.55rem;
+            }
+            .contact-cta {
+                padding: 3px 10px;
+                font-size: 0.55rem;
+                gap: 4px;
+                border-radius: 4px;
+            }
+            .contact-cta i {
+                font-size: 0.55rem;
+            }
+            /* Keep "Book Now" text visible, just smaller */
+            .cta-text {
+                display: inline !important;
+            }
+            /* Email stays visible */
+            .contact-item-email {
+                display: flex !important;
+            }
+        }
+
+        /* ---- Extra Tiny (max-width: 360px) - scale down further ---- */
+        @media (max-width: 360px) {
+            .contact-bar {
+                padding: 3px 0;
+                font-size: 0.5rem;
+                min-height: 26px;
+            }
+            .contact-bar-content {
+                gap: 3px 5px;
+            }
+            .contact-left {
+                gap: 4px;
+            }
+            .contact-right {
+                gap: 3px;
+            }
+            .contact-item {
+                font-size: 0.5rem;
+                gap: 3px;
+            }
+            .contact-item .icon-wrap {
+                width: 15px;
+                height: 15px;
+                font-size: 0.4rem;
+            }
+            .contact-item a {
+                font-size: 0.5rem;
+            }
+            .contact-item a[href^="tel:"] {
+                font-size: 0.55rem;
+            }
+            .contact-cta {
+                padding: 2px 8px;
+                font-size: 0.45rem;
+                gap: 3px;
+                border-radius: 3px;
+            }
+            .contact-cta i {
+                font-size: 0.45rem;
+            }
+            .contact-badge {
+                display: none !important;
+            }
+            /* Email stays visible but tiny */
+            .contact-item-email {
+                display: flex !important;
+            }
+            .contact-item-email a {
+                max-width: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -548,7 +668,7 @@
             font-weight: 800;
         }
 
-        /* ===== HERO NAV BUTTONS — Enhanced ===== */
+        /* ===== HERO NAV BUTTONS ===== */
         .hero-btn {
             position: absolute;
             top: 50%;
@@ -1047,6 +1167,20 @@
             gap: 16px;
             flex-wrap: wrap;
         }
+        .btn-outline-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: white;
+            padding: 14px 34px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+            background-color: #25D366;
+        }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -1185,7 +1319,7 @@
             transform: translateY(0);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE (main layout) ===== */
         @media (max-width: 1024px) {
             .hero-content h1 {
                 font-size: 2.8rem;
@@ -1355,31 +1489,27 @@
     </style>
 </head>
 <body>
-    <!-- ===== CONTACT BAR — Enhanced ===== -->
+    <!-- ===== CONTACT BAR — always single-line, just smaller on mobile ===== -->
     <section class="contact-bar">
         <div class="container">
             <div class="contact-bar-content">
                 <div class="contact-left">
+                    <!-- Phone — always visible -->
                     <div class="contact-item">
                         <span class="icon-wrap"><i class="fas fa-phone-alt"></i></span>
                         <a href="tel:+919876543210">+91 98765 43210</a>
                     </div>
-                    <div class="contact-item">
+                    <!-- Email — always visible (just smaller on mobile) -->
+                    <div class="contact-item contact-item-email">
                         <span class="icon-wrap"><i class="fas fa-envelope"></i></span>
                         <a href="mailto:info@homeappliancerepair.com">info@homeappliancerepair.com</a>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon-wrap"><i class="fas fa-clock"></i></span>
-                        <span>Mon–Sat: 8 AM – 9 PM</span>
-                    </div>
                 </div>
                 <div class="contact-right">
-                    <span class="contact-badge">
-                        <i class="fas fa-star"></i>
-                        <span>4.9 <span class="highlight">★</span> 5000+ reviews</span>
-                    </span>
+                    <!-- Book Now CTA — always visible (text shrinks on mobile) -->
                     <a href="#contact" class="contact-cta">
-                        <i class="fas fa-calendar-check"></i> Book Now
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="cta-text">Book Now</span>
                     </a>
                 </div>
             </div>
@@ -1390,7 +1520,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img style="height: 55px !important;" src="img/logo.png" alt="HomeCare Logo" />
+                <img style="height:55px !important;" src="img/logo.png" alt="HomeCare Logo" />
                 Home Appliance Repair
             </a>
             <ul class="nav-links" id="navLinks">
@@ -1406,7 +1536,7 @@
         </div>
     </nav>
 
-    <!-- ===== HERO WITH 3 SLIDES & ENHANCED NAV ===== -->
+    <!-- ===== HERO WITH 3 SLIDES ===== -->
     <section class="hero" id="hero">
         <div class="hero-slider" id="heroSlider">
 
@@ -1931,7 +2061,7 @@
         }
 
         function startSlider() {
-            slideInterval = setInterval(nextSlide, 4000);
+            slideInterval = setInterval(nextSlide, 3000);
         }
         startSlider();
 
