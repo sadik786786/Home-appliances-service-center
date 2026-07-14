@@ -34,7 +34,7 @@
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
@@ -55,204 +55,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 16px;
-        }
-
-        /* ===== CONTACT BAR ===== */
-        .contact-bar {
-            background: linear-gradient(135deg, var(--true-blue) 0%, var(--true-blue-dark) 100%);
-            color: #fff;
-            padding: 8px 0;
-            font-size: 0.85rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            position: relative;
-            overflow: hidden;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-        }
-        .contact-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 8px 16px;
-            position: relative;
-            z-index: 1;
-            width: 100%;
-        }
-        .contact-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: nowrap;
-            flex-shrink: 1;
-            min-width: 0;
-        }
-        .contact-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: nowrap;
-            flex-shrink: 0;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255, 255, 255, 0.92);
-            font-weight: 500;
-            transition: color 0.3s;
-            white-space: nowrap;
-            flex-shrink: 0;
-            font-size: 0.8rem;
-        }
-        .contact-item .icon-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 26px;
-            height: 26px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            font-size: 0.7rem;
-            transition: background 0.3s, transform 0.3s;
-            flex-shrink: 0;
-        }
-        .contact-item a {
-            color: inherit;
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 0.8rem;
-        }
-        .contact-item a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        .contact-cta {
-            background: #fff;
-            color: var(--true-blue);
-            padding: 5px 14px;
-            font-weight: 700;
-            font-size: 0.7rem;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
-            flex-shrink: 0;
-            border-radius: 4px;
-        }
-        .contact-cta i {
-            font-size: 0.65rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-bar {
-                padding: 5px 0;
-                font-size: 0.65rem;
-                min-height: 32px;
-                margin-top: 12px;
-            }
-            .contact-bar-content {
-                gap: 4px 8px;
-            }
-            .contact-left {
-                gap: 6px;
-            }
-            .contact-right {
-                gap: 5px;
-            }
-            .contact-item {
-                font-size: 0.6rem;
-                gap: 4px;
-            }
-            .contact-item .icon-wrap {
-                width: 20px;
-                height: 20px;
-                font-size: 0.5rem;
-            }
-            .contact-item a {
-                font-size: 0.6rem;
-            }
-            .contact-item a[href^="tel:"] {
-                font-size: 0.6rem;
-                font-weight: 700;
-            }
-            .contact-cta {
-                padding: 3px 10px;
-                font-size: 0.55rem;
-                gap: 4px;
-                border-radius: 3px;
-            }
-            .contact-cta i {
-                font-size: 0.5rem;
-            }
-            .contact-item-email a {
-                max-width: 80px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contact-bar {
-                padding: 4px 0;
-                font-size: 0.5rem;
-                min-height: 28px;
-            }
-            .contact-bar-content {
-                gap: 3px 5px;
-            }
-            .contact-left {
-                gap: 4px;
-            }
-            .contact-right {
-                gap: 3px;
-            }
-            .contact-item {
-                font-size: 0.5rem;
-                gap: 3px;
-            }
-            .contact-item .icon-wrap {
-                width: 16px;
-                height: 16px;
-                font-size: 0.4rem;
-            }
-            .contact-item a {
-                font-size: 0.5rem;
-            }
-            .contact-item a[href^="tel:"] {
-                font-size: 0.55rem;
-                font-weight: 700;
-            }
-            .contact-cta {
-                padding: 2px 8px;
-                font-size: 0.45rem;
-                gap: 3px;
-                border-radius: 3px;
-            }
-            .contact-cta i {
-                font-size: 0.4rem;
-            }
-            .contact-item-email a {
-                max-width: 60px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .contact-item-email {
-                display: none !important;
-            }
-            .contact-left {
-                gap: 3px;
-            }
-            .contact-item a[href^="tel:"] {
-                font-size: 0.5rem;
-            }
         }
 
         /* ===== TYPOGRAPHY & BADGES ===== */
@@ -382,7 +184,7 @@
             z-index: 1000;
             padding: 0 16px;
             transition: box-shadow 0.3s;
-            height: 68px;
+            height: 78px;
             display: flex;
             align-items: center;
             border-bottom: 1px solid var(--border-light);
@@ -401,13 +203,13 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1rem;
-            font-weight: 800;
+            gap: 9px;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--text-dark);
         }
         .logo img {
-            height: 55px;
+            height: 65px;
             width: auto;
             display: block;
         }
@@ -418,6 +220,16 @@
         .logo span {
             color: var(--true-blue);
         }
+        .logo-title {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-subtitle {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-gray);
+            margin-top: 2px;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -425,7 +237,7 @@
         }
         .nav-links a {
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--text-dark);
             transition: color 0.3s;
             position: relative;
@@ -452,10 +264,10 @@
             background: var(--true-blue);
             color: #fff !important;
             padding: 6px 16px;
-            font-weight: 700;
-            font-size: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
             transition: background 0.3s, transform 0.2s;
-            border-radius: 4px;
+            border-radius: 2px;
         }
         .nav-cta::after {
             display: none !important;
@@ -597,12 +409,13 @@
         /* ===== HERO ===== */
         .hero {
             position: relative;
-            height: 80vh;
-            min-height: 480px;
+            min-height: 70vh;
+            height: 600px;
             display: flex;
-            align-items: center;
+            align-items: top;
+            justify-content: top;
             overflow: hidden;
-            color: #fff;
+            padding: 40px 0 50px;
         }
         .hero-bg {
             position: absolute;
@@ -622,209 +435,128 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.10) 100%);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.30) 60%, rgba(0, 0, 0, 0.10) 100%);
         }
         .hero .container {
             position: relative;
             z-index: 2;
             width: 100%;
-        }
-        .hero-content {
-            max-width: 720px;
-            padding: 16px 0;
-        }
-        .hero-content h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            line-height: 1.1;
-            color: #fff;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-        }
-        .hero-content h1 span {
-            text-shadow: 0 2px 12px rgba(255, 213, 79, 0.30);
-        }
-        .hero-content .hero-phone {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--gold);
-            margin: 8px 0 12px;
-            display: inline-block;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-        }
-        .hero-content .hero-phone i {
-            margin-right: 8px;
-        }
-        .hero-content p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.92);
-            margin-bottom: 12px;
-            max-width: 540px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
-        }
-        .hero-content .desc-detail {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 16px;
-            max-width: 560px;
-            line-height: 1.7;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-        }
-        .hero-badges {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px 12px;
-            margin: 10px 0 16px;
+            flex-direction: column;
+            align-items: top;
+            justify-content: top;
         }
-        .hero-badges .badge {
+
+        .hero-image-wrapper {
             display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
+            flex-direction: column;
+            align-items: top;
+            justify-content: top;
+            width: 100%;
+            text-align: top;
+        }
+
+        .hero-image {
+            max-width: 680px;
+            height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.30);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 255, 255, 0.20);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.40);
+        }
+
+        .hero-tagline {
+            margin-top: 20px;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #fff;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.20);
-            backdrop-filter: blur(4px);
+            text-align: center;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
         }
-        .hero-badges .badge i {
+
+        .hero-tagline span {
             color: var(--gold);
-            font-size: 0.8rem;
+            font-weight: 800;
         }
-        .hero-actions {
+
+        .hero-actions-center {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 4px;
+            gap: 12px;
+            margin-top: 16px;
+            justify-content: center;
         }
-        .hero-rating {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.20);
-        }
-        .hero-rating .stars {
-            color: var(--gold);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .hero-rating .count {
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.85rem;
-        }
-        .hero-rating .count span {
-            color: #fff;
-            font-weight: 800;
+
+        /* ---- Hero responsive ---- */
+        @media (max-width: 992px) {
+            .hero-image {
+                max-width: 65%;
+            }
+            .hero-tagline {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
             .hero {
-                height: 70vh;
-                min-height: 400px;
+                min-height: 50vh;
+                padding: 30px 0 40px;
             }
-            .hero-content h1 {
-                font-size: 2rem;
+            .hero-image {
+                max-width: 75%;
             }
-            .hero-content .hero-phone {
-                font-size: 1.3rem;
+            .hero-tagline {
+                font-size: 0.9rem;
+                margin-top: 14px;
             }
-            .hero-content p {
-                font-size: 0.85rem;
-            }
-            .hero-content .desc-detail {
-                font-size: 0.8rem;
-                margin-bottom: 12px;
-            }
-            .hero-badges .badge {
-                font-size: 0.65rem;
-                padding: 3px 10px;
-            }
-            .hero-rating .stars {
-                font-size: 0.75rem;
-            }
-            .hero-rating .count {
-                font-size: 0.7rem;
+            .hero-actions-center {
+                gap: 10px;
+                margin-top: 12px;
             }
         }
 
         @media (max-width: 480px) {
             .hero {
-                height: 65vh;
-                min-height: 340px;
+                min-height: 40vh;
+                padding: 20px 0 30px;
             }
-            .hero-content {
-                padding: 10px 0;
+            .hero-image {
+                max-width: 85%;
+                border-radius: 12px;
             }
-            .hero-content h1 {
-                font-size: 1.5rem;
-                margin-bottom: 6px;
-            }
-            .hero-content .hero-phone {
-                font-size: 1.1rem;
-                margin: 4px 0 8px;
-            }
-            .hero-content p {
+            .hero-tagline {
                 font-size: 0.75rem;
-                margin-bottom: 8px;
+                margin-top: 10px;
             }
-            .hero-content .desc-detail {
-                font-size: 0.7rem;
-                margin-bottom: 10px;
-            }
-            .hero-badges {
-                gap: 5px 8px;
-                margin: 6px 0 10px;
-            }
-            .hero-badges .badge {
-                font-size: 0.55rem;
-                padding: 2px 8px;
-                gap: 4px;
-            }
-            .hero-badges .badge i {
-                font-size: 0.6rem;
-            }
-            .hero-actions {
-                gap: 6px;
-            }
-            .hero-rating {
-                margin-top: 12px;
-                padding-top: 10px;
-                gap: 6px;
-            }
-            .hero-rating .stars {
-                font-size: 0.65rem;
-                letter-spacing: 0.5px;
-            }
-            .hero-rating .count {
-                font-size: 0.6rem;
+            .hero-actions-center {
+                gap: 8px;
+                margin-top: 10px;
             }
         }
 
         @media (max-width: 360px) {
             .hero {
-                height: 60vh;
-                min-height: 280px;
+                min-height: 32vh;
+                padding: 16px 0 24px;
             }
-            .hero-content h1 {
-                font-size: 1.2rem;
+            .hero-image {
+                max-width: 92%;
+                border-radius: 10px;
             }
-            .hero-content .hero-phone {
-                font-size: 0.95rem;
-            }
-            .hero-content p {
+            .hero-tagline {
                 font-size: 0.65rem;
+                margin-top: 8px;
             }
-            .hero-content .desc-detail {
-                font-size: 0.6rem;
-                line-height: 1.4;
-            }
-            .hero-badges .badge {
-                font-size: 0.45rem;
-                padding: 1px 6px;
+            .hero-actions-center {
+                gap: 6px;
+                margin-top: 8px;
             }
         }
 
@@ -987,7 +719,7 @@
             .service-centre .image-wrap img {
                 aspect-ratio: 16/9;
             }
-            .service-centre .content > div:last-child {
+            .service-centre .content>div:last-child {
                 gap: 8px !important;
                 margin-top: 12px !important;
             }
@@ -1333,7 +1065,7 @@
         .stats {
             padding: 80px 0;
             background:
-                linear-gradient(rgba(0, 0, 255, 0.1), rgba(23, 23, 212, 0.177)),
+                linear-gradient(rgba(0, 0, 255, 0.10), rgba(23, 23, 212, 0.177)),
                 url("img/img4.png");
             background-size: cover;
             background-position: center;
@@ -1902,7 +1634,10 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <img src="img/logo.png" alt="HomeCare Logo" />
-                Home Appliance Repair
+                <div class="logo-title">
+                    Cool Guard India 
+                <div class="logo-subtitle">Home Appliance Repair</div>
+                </div>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" class="active">Home</a></li>
@@ -1918,30 +1653,12 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-        <div class="hero-bg" style="background-image: url('img/hero1.png');"></div>
+        <!-- Hero Background Image (kept as requested) -->
+        <div class="hero-bg" style="background-image: url('img/kitchen.avif');"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Blue Star <span>Service Centre</span></h1>
-                <p>24×7 Customer Support for all your Blue Star appliances.</p>
-                <div class="hero-phone">
-                    <i class="fas fa-phone-alt"></i> +91 99970 22185
-                </div>
-                <div class="desc-detail">
-                    Fast, reliable, and hassle-free service for your Blue Star home appliances right at your doorstep.
-                </div>
-                <div class="hero-badges">
-                    <span class="badge"><i class="fas fa-clock"></i> 24×7 Support</span>
-                    <span class="badge"><i class="fas fa-tools"></i> Expert Techs</span>
-                    <span class="badge"><i class="fas fa-home"></i> Doorstep</span>
-                </div>
-                <div class="hero-actions">
-                    <a href="#service-centre" class="btn-primary"><i class="fas fa-calendar-check"></i> Book</a>
-                    <a href="tel:+919997022185" class="btn-secondary"><i class="fas fa-phone-alt"></i> Call</a>
-                </div>
-                <div class="hero-rating">
-                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    <span class="count"><span>10,000+</span> Happy Customers</span>
-                </div>
+            <div class="hero-image-wrapper fade-up">
+                <!-- Centered & smaller hero image -->
+                <img src="img/bluestar.png" alt="Blue Star Service Centre" class="hero-image" />
             </div>
         </div>
     </section>
@@ -1949,7 +1666,7 @@
     <!-- ===== SERVICE CENTRE SECTION ===== -->
     <section class="service-centre" id="service-centre">
         <div class="container">
-            <div class="grid-2col">
+            <div class="">
                 <div class="content fade-up">
                     <span class="section-badge">Blue Star Service Centre</span>
                     <h2>24×7 <span>Customer Support</span> &amp; Repair</h2>
@@ -1982,9 +1699,6 @@
                         <a href="tel:+919997022185" class="btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
                         <a href="#contact" class="btn-secondary"><i class="fas fa-calendar-check"></i> Book Service</a>
                     </div>
-                </div>
-                <div class="image-wrap fade-up">
-                    <img src="img/hero2.png" alt="Blue Star Service Centre" loading="lazy" />
                 </div>
             </div>
         </div>
