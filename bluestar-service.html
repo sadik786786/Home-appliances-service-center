@@ -210,11 +210,11 @@
         }
         .logo img {
             height: 65px;
-            width: auto;
+            width: 65px;
             display: block;
         }
         .logo i {
-            color: var(--true-blue);
+            
             font-size: 1.4rem;
         }
         .logo span {
@@ -224,12 +224,39 @@
             display: flex;
             flex-direction: column;
         }
+        .logo-main {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.15;
+        }
         .logo-subtitle {
             font-size: 0.75rem;
             font-weight: 500;
             color: var(--text-gray);
             margin-top: 2px;
         }
+
+        /* ---- 24x7 badge logo ---- */
+        
+        .logo-badge-arrow {
+            position: absolute;
+            top: -6px;
+            right: -4px;
+            font-size: 0.6rem;
+            color: var(--true-blue);
+            background: #fff;
+            border-radius: 50%;
+            padding: 1px;
+        }
+        .logo-badge-text {
+            font-size: 0.7rem;
+            font-weight: 900;
+            line-height: 0.85;
+            color: var(--true-blue);
+            text-align: center;
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -311,10 +338,23 @@
             }
             .logo {
                 font-size: 0.8rem;
-                gap: 6px;
+                gap: 8px;
             }
             .logo img {
                 height: 42px;
+            }
+            .logo-badge {
+                width: 36px;
+                height: 36px;
+            }
+            .logo-badge-text {
+                font-size: 0.6rem;
+            }
+            .logo-main {
+                font-size: 0.8rem;
+            }
+            .logo-subtitle {
+                font-size: 0.65rem;
             }
             .nav-links {
                 position: fixed;
@@ -348,18 +388,34 @@
 
         @media (max-width: 480px) {
             .navbar {
-                height: 50px;
+                height: 56px;
                 padding: 0 10px;
             }
             .logo {
                 font-size: 0.6rem;
-                gap: 4px;
+                gap: 6px;
             }
             .logo img {
                 height: 32px;
             }
+            .logo-badge {
+                width: 34px;
+                height: 34px;
+            }
+            .logo-badge-text {
+                font-size: 0.55rem;
+            }
+            .logo-badge-arrow {
+                font-size: 0.5rem;
+            }
+            .logo-main {
+                font-size: 0.75rem;
+            }
+            .logo-subtitle {
+                font-size: 0.6rem;
+            }
             .nav-links {
-                top: 30px;
+                top: 56px;
                 padding: 12px 0;
                 gap: 10px;
             }
@@ -378,18 +434,31 @@
 
         @media (max-width: 360px) {
             .navbar {
-                height: 44px;
+                height: 50px;
                 padding: 0 6px;
             }
             .logo {
                 font-size: 0.5rem;
-                gap: 3px;
+                gap: 4px;
             }
             .logo img {
                 height: 26px;
             }
+            .logo-badge {
+                width: 30px;
+                height: 30px;
+            }
+            .logo-badge-text {
+                font-size: 0.48rem;
+            }
+            .logo-main {
+                font-size: 0.65rem;
+            }
+            .logo-subtitle {
+                font-size: 0.52rem;
+            }
             .nav-links {
-                top: 28px;
+                top: 20px;
                 padding: 10px 0;
                 gap: 8px;
             }
@@ -406,157 +475,21 @@
             }
         }
 
-        /* ===== HERO ===== */
+        /* ===== HERO (simple full-width image, no overlay) ===== */
         .hero {
-            position: relative;
-            min-height: 70vh;
-            height: 600px;
-            display: flex;
-            align-items: top;
-            justify-content: top;
+            padding: 0;
             overflow: hidden;
-            padding: 40px 0 50px;
+            background: var(--bg-white);
         }
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
-        }
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.30) 60%, rgba(0, 0, 0, 0.10) 100%);
-        }
-        .hero .container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: top;
-            justify-content: top;
-        }
-
-        .hero-image-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: top;
-            justify-content: top;
-            width: 100%;
-            text-align: top;
-        }
-
         .hero-image {
-            max-width: 680px;
-            height: 180px;
-            border-radius: 8px;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.30);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            margin: 0 auto;
-            border: 2px solid rgba(255, 255, 255, 0.20);
-        }
-
-        .hero-image:hover {
-            transform: scale(1.01);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.40);
-        }
-
-        .hero-tagline {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fff;
-            text-align: center;
-            letter-spacing: 0.3px;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.40);
-        }
-
-        .hero-tagline span {
-            color: var(--gold);
-            font-weight: 800;
-        }
-
-        .hero-actions-center {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 16px;
-            justify-content: center;
-        }
-
-        /* ---- Hero responsive ---- */
-        @media (max-width: 992px) {
-            .hero-image {
-                max-width: 65%;
-            }
-            .hero-tagline {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                min-height: 50vh;
-                padding: 30px 0 40px;
-            }
-            .hero-image {
-                max-width: 75%;
-            }
-            .hero-tagline {
-                font-size: 0.9rem;
-                margin-top: 14px;
-            }
-            .hero-actions-center {
-                gap: 10px;
-                margin-top: 12px;
-            }
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         @media (max-width: 480px) {
-            .hero {
-                min-height: 40vh;
-                padding: 20px 0 30px;
-            }
             .hero-image {
-                max-width: 85%;
-                border-radius: 12px;
-            }
-            .hero-tagline {
-                font-size: 0.75rem;
-                margin-top: 10px;
-            }
-            .hero-actions-center {
-                gap: 8px;
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .hero {
-                min-height: 32vh;
-                padding: 16px 0 24px;
-            }
-            .hero-image {
-                max-width: 92%;
-                border-radius: 10px;
-            }
-            .hero-tagline {
-                font-size: 0.65rem;
-                margin-top: 8px;
-            }
-            .hero-actions-center {
-                gap: 6px;
-                margin-top: 8px;
+                border-radius: 0 0 10px 10px;
             }
         }
 
@@ -652,6 +585,9 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
+            .service-centre .content {
+                text-align: center;
+            }
             .service-centre .content h2 {
                 font-size: 1.5rem;
             }
@@ -666,10 +602,17 @@
                 font-size: 0.8rem;
                 padding: 12px 16px;
                 margin: 10px 0 14px;
+                text-align: left;
+            }
+            .service-centre .keywords {
+                justify-content: center;
             }
             .service-centre .keywords .tag {
                 font-size: 0.6rem;
                 padding: 3px 10px;
+            }
+            .service-centre .content > div:last-child {
+                justify-content: center;
             }
             .service-centre .image-wrap img {
                 aspect-ratio: 16/10;
@@ -1517,8 +1460,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 50px;
-            height: 50px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1537,11 +1480,12 @@
         .float-wa {
             background: #25D366;
             bottom: 20px;
+            margin-top:20px ;
             right: 20px;
         }
         .float-call {
             background: var(--true-blue);
-            bottom: 82px;
+            bottom: 110px;
             right: 20px;
             font-size: 1.3rem;
         }
@@ -1551,8 +1495,8 @@
 
         @media (max-width: 768px) {
             .float-btn {
-                width: 44px;
-                height: 44px;
+                width: 74px;
+                height: 74px;
                 font-size: 1.3rem;
                 bottom: 16px;
                 right: 16px;
@@ -1582,14 +1526,14 @@
 
         @media (max-width: 360px) {
             .float-btn {
-                width: 32px;
-                height: 32px;
+                width: 52px;
+                height: 52px;
                 font-size: 0.8rem;
                 bottom: 10px;
                 right: 10px;
             }
             .float-call {
-                bottom: 52px;
+                bottom: 72px;
                 right: 10px;
                 font-size: 0.7rem;
             }
@@ -1633,10 +1577,12 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="img/logo.png" alt="HomeCare Logo" />
+                <div class="logo-badge">
+                    <img src="img/logo.png" alt="Cool Guard India Logo" />
+                </div>
                 <div class="logo-title">
-                    Cool Guard India 
-                <div class="logo-subtitle">Home Appliance Repair</div>
+                    <span class="logo-main">Cool Guard India</span>
+                    <div class="logo-subtitle">Appliances Repair Center</div>
                 </div>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -1653,14 +1599,7 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
-        <!-- Hero Background Image (kept as requested) -->
-        <div class="hero-bg" style="background-image: url('img/kitchen.avif');"></div>
-        <div class="container">
-            <div class="hero-image-wrapper fade-up">
-                <!-- Centered & smaller hero image -->
-                <img src="img/bluestar.png" alt="Blue Star Service Centre" class="hero-image" />
-            </div>
-        </div>
+        <img src="img/starhero.png" alt="Blue Star Appliances" class="hero-image fade-up" />
     </section>
 
     <!-- ===== SERVICE CENTRE SECTION ===== -->
@@ -1670,18 +1609,18 @@
                 <div class="content fade-up">
                     <span class="section-badge">Blue Star Service Centre</span>
                     <h2>24×7 <span>Customer Support</span> &amp; Repair</h2>
-                    <div class="highlight-phone">
-                        <i class="fas fa-phone-alt"></i> +91 99970 22185
-                    </div>
                     <p>
-                        <strong>Blue Star Customer Service Center</strong> — We specialize in the repair, servicing, and installation of Blue Star appliances, exclusively for out-of-warranty products. Our team of trained and experienced technicians ensures professional support with expert care — all in the comfort of your home.
+                        <strong>Blue Star Repair Service Centre</strong>, Customer Care, Helpline: +91 99970 22185
                     </p>
                     <div class="mission-text">
                         <i class="fas fa-bullseye" style="color:var(--true-blue); margin-right:8px;"></i>
-                        <strong>Our Mission:</strong> Deliver fast, reliable, and hassle-free service for your Blue Star home appliances right at your doorstep.
+                        <strong>At the Blue Star Repair and Service Centre, our mission is simple:</strong> to deliver fast, reliable, and hassle-free service for your Blue Star home appliances right at your doorstep.
                     </div>
                     <p>
-                        Whether it's your air conditioner or any other Blue Star appliance, we're here to make your service experience smooth and efficient. Book your service call today and enjoy high-quality, dependable care from our dedicated Blue Star experts — because your comfort is our priority.
+                        <strong>Fast Reliable Home Appliances Repair Service Centre</strong>
+                    </p>
+                    <p>
+                        We specialize in the repair, servicing, and installation of Blue Star appliances, exclusively for out-of-warranty products. Our team of trained and experienced technicians ensures professional support with expert care all in the comfort of your home.
                     </p>
                     <div class="keywords">
                         <span class="tag">Blue Star ac repair</span>
@@ -1802,7 +1741,9 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="img/logo.png" alt="HomeCare Logo" />
+                        <div class="logo-badge">
+                            <img src="img/logo.png" alt="Customer Care Mumbai Logo" />
+                        </div>
                         Home Appliance Repair
                     </a>
                     <p>India's leading home appliance brand since 1943. Committed to delivering world-class cooling, refrigeration, and laundry solutions for modern Indian homes.</p>
